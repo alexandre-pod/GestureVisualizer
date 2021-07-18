@@ -100,6 +100,12 @@ private class PinchVisualizerView: UIView {
         didSet { setNeedsDisplay() }
     }
 
+    private let scaleNumberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+
     // MARK: - Life cycle
 
     override init(frame: CGRect) {
@@ -156,5 +162,18 @@ private class PinchVisualizerView: UIView {
         tintColor.setStroke()
         context.setLineWidth(2 * stokeWidth)
         context.strokePath()
+
+        context.move(to: configuration.center + CGPoint(x: -configuration.initialRadius, y: 0))
+        context.addLine(to: configuration.center + CGPoint(x: -configuration.initialRadius * configuration.scale, y: 0))
+
+        context.setLineWidth(6)
+        context.setLineCap(.round)
+        context.strokePath()
+
+        context.drawText(
+            "\(scaleNumberFormatter.string(for: configuration.scale * 100) ?? "")%",
+            centeredOn: configuration.center + CGPoint(x: -configuration.initialRadius * max(1, configuration.scale) - 24, y: 0),
+            color: tintColor
+        )
     }
 }
