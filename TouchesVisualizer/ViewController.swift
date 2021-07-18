@@ -21,5 +21,9 @@ class ViewController: UIViewController {
         let touchesVisualizer = TouchesVisualizerRecognizer()
         touchesVisualizer.tintColor = .label
         view.addGestureRecognizer(touchesVisualizer)
+
+        let pinchGestureRecognizer = PinchGestureRecognizer()
+        pinchGestureRecognizer.tintColor = .label
+        view.addGestureRecognizer(pinchGestureRecognizer)
     }
 }

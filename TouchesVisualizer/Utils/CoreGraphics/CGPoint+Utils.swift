@@ -21,6 +21,17 @@ extension CGPoint: AdditiveArithmetic {
             y: lhs.y - rhs.y
         )
     }
+
+    public static func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+        return CGPoint(
+            x: lhs.x * rhs,
+            y: lhs.y * rhs
+        )
+    }
+
+    public static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+        return lhs * (1 / rhs)
+    }
 }
 
 extension CGPoint {
