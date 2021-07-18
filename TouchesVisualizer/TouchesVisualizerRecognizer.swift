@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TouchesVisualizerRecognizer: UIGestureRecognizer {
+class TouchesVisualizerRecognizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
 
     var tintColor: UIColor {
         get { touchesView.tintColor }
@@ -19,6 +19,13 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer {
 
     private let touchFrameSize = CGSize(width: 100, height: 100)
     private let touchesColor = UIColor.label
+
+    // MARK: - Life cycle
+
+    override init(target: Any?, action: Selector?) {
+        super.init(target: target, action: action)
+        delegate = self
+    }
 
     // MARK: - UIGestureRecognizer
 
@@ -51,6 +58,15 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer {
         touches.forEach { self.touches.remove($0) }
         state = allTouchesRemoved ? .ended : .changed
         updateTouchesView()
+    }
+
+    // MARK: - UIGestureRecognizerDelegate
+
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
+    ) -> Bool {
+        return true
     }
 
     // MARK: - Private
