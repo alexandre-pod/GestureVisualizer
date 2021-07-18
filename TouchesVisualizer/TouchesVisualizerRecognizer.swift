@@ -9,9 +9,13 @@ import UIKit
 
 class TouchesVisualizerRecognizer: UIGestureRecognizer {
 
-    private(set) var touches: Set<UITouch> = []
+    var tintColor: UIColor {
+        get { touchesView.tintColor }
+        set { touchesView.tintColor = newValue }
+    }
 
-    private var touchViews: [TouchView] = []
+    private var touches: Set<UITouch> = []
+    private var touchesView = TouchesView()
 
     private let touchFrameSize = CGSize(width: 100, height: 100)
     private let touchesColor = UIColor.label
@@ -21,18 +25,16 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesBegan(touches, with: event)
         let isFirstTouch = touches.isEmpty
-        touches.forEach {
-            self.touches.insert($0)
-        }
+        touches.forEach { self.touches.insert($0) }
         state = isFirstTouch ? .began : .changed
-        updateTouchViews()
+        updateTouchesView()
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
         touches.forEach { self.touches.insert($0) }
         state = .changed
-        updateTouchViews()
+        updateTouchesView()
     }
 
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
@@ -40,7 +42,7 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer {
         let allCancelled = self.touches.count == touches.count
         touches.forEach { self.touches.remove($0) }
         state = allCancelled ? .cancelled : .changed
-        updateTouchViews()
+        updateTouchesView()
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
@@ -48,44 +50,48 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer {
         let allTouchesRemoved = self.touches.count == touches.count
         touches.forEach { self.touches.remove($0) }
         state = allTouchesRemoved ? .ended : .changed
-        updateTouchViews()
+        updateTouchesView()
     }
 
     // MARK: - Private
 
-    private func updateTouchViews() {
-        ensureNumberOfTouchViews(to: touches.count)
-        configureTouchViews(with: touches)
+    private func updateTouchesView() {
+        installTouchesViewIfNeeded()
+        let points = touches.map { $0.location(in: touchesView) }
+        let config = TouchesViewConfiguration(
+            touches: points,
+            lines: lines(for: points)
+        )
+        touchesView.configure(with: config)
     }
 
-    private func ensureNumberOfTouchViews(to number: Int) {
-        assert(number >= 0)
-        guard touchViews.count != number else { return }
-        if touchViews.count > number {
-            for index in number..<touchViews.count {
-                touchViews[index].removeFromSuperview()
-            }
-            touchViews.removeLast(touchViews.count - number)
-        } else {
-            let missingViews = number - touchViews.count
-            for _ in (0..<missingViews) {
-                let touchView = TouchView()
-                touchView.tintColor = touchesColor
-                view?.addSubview(touchView)
-                touchView.frame.size = touchFrameSize
-                touchViews.append(touchView)
+    private func installTouchesViewIfNeeded() {
+        if touchesView.superview != self.view {
+            if let view = self.view {
+                view.addSubview(touchesView)
+                touchesView.pinToSuperView()
+            } else {
+                touchesView.removeFromSuperview()
             }
         }
     }
 
-    private func configureTouchViews(with touches: Set<UITouch>) {
-        guard let view = view else { return }
-        for (touchView, touch) in zip(touchViews, touches) {
-            if touchView.superview != view {
-                touchView.removeFromSuperview()
-                view.addSubview(touchView)
-            }
-            touchView.frame.center = touch.location(in: view)
-        }
+    private func lines(for points: [CGPoint]) -> [TouchesViewConfiguration.Line] {
+        PrimsAlgorithm(nodes: points)
+            .execute()
+            .map { TouchesViewConfiguration.Line(start: $0.node1, end: $0.node2) }
+    }
+}
+
+extension CGPoint: Distancable, Hashable {
+    static func distance(from point1: CGPoint, to point2: CGPoint) -> CGFloat {
+        let dx = point1.x - point2.x
+        let dy = point1.y - point2.y
+        return dx * dx + dy * dy
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(x)
+        hasher.combine(y)
     }
 }

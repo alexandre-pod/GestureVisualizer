@@ -13,13 +13,13 @@ class ViewController: UIViewController {
         static let backgroundColor = UIColor.systemBackground
     }
 
-    private var touchViews: [TouchView] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = Constant.backgroundColor
 
-        view.addGestureRecognizer(TouchesVisualizerRecognizer())
+        let touchesVisualizer = TouchesVisualizerRecognizer()
+        touchesVisualizer.tintColor = .label
+        view.addGestureRecognizer(touchesVisualizer)
     }
 }
