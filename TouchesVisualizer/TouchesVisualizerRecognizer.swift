@@ -25,6 +25,9 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer, UIGestureRecognizerDeleg
     override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
         delegate = self
+        cancelsTouchesInView = false
+        delaysTouchesBegan = false
+        delaysTouchesEnded = false
     }
 
     // MARK: - UIGestureRecognizer
