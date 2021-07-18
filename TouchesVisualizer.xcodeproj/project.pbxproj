@@ -14,6 +14,11 @@
 		ACE5178826A4324600027B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5178626A4324600027B64 /* LaunchScreen.storyboard */; };
 		ACE5179326A4324600027B64 /* TouchesVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */; };
 		ACE5179D26A4324600027B64 /* TouchesVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */; };
+		ACE517AA26A450CB00027B64 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517A926A450CB00027B64 /* TouchView.swift */; };
+		ACE517AC26A4510E00027B64 /* TouchesVisualizerRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517AB26A4510E00027B64 /* TouchesVisualizerRecognizer.swift */; };
+		ACE517B326A4514800027B64 /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B226A4514800027B64 /* CGRect+Utils.swift */; };
+		ACE517B526A4515200027B64 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B426A4515200027B64 /* CGPoint+Utils.swift */; };
+		ACE517B726A4515C00027B64 /* CGSize+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B626A4515C00027B64 /* CGSize+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerTests.swift; sourceTree = "<group>"; };
 		ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchesVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerUITests.swift; sourceTree = "<group>"; };
+		ACE517A926A450CB00027B64 /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
+		ACE517AB26A4510E00027B64 /* TouchesVisualizerRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerRecognizer.swift; sourceTree = "<group>"; };
+		ACE517B226A4514800027B64 /* CGRect+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
+		ACE517B426A4515200027B64 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		ACE517B626A4515C00027B64 /* CGSize+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +105,12 @@
 		ACE5177A26A4324400027B64 /* TouchesVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				ACE517AD26A4512000027B64 /* Utils */,
 				ACE5177B26A4324400027B64 /* AppDelegate.swift */,
 				ACE5177D26A4324400027B64 /* SceneDelegate.swift */,
 				ACE5177F26A4324400027B64 /* ViewController.swift */,
+				ACE517AB26A4510E00027B64 /* TouchesVisualizerRecognizer.swift */,
+				ACE517A926A450CB00027B64 /* TouchView.swift */,
 				ACE5178426A4324600027B64 /* Assets.xcassets */,
 				ACE5178626A4324600027B64 /* LaunchScreen.storyboard */,
 				ACE5178926A4324600027B64 /* Info.plist */,
@@ -119,6 +132,24 @@
 				ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */,
 			);
 			path = TouchesVisualizerUITests;
+			sourceTree = "<group>";
+		};
+		ACE517AD26A4512000027B64 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ACE517B126A4513D00027B64 /* CoreGraphics */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ACE517B126A4513D00027B64 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				ACE517B226A4514800027B64 /* CGRect+Utils.swift */,
+				ACE517B426A4515200027B64 /* CGPoint+Utils.swift */,
+				ACE517B626A4515C00027B64 /* CGSize+Utils.swift */,
+			);
+			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE517AA26A450CB00027B64 /* TouchView.swift in Sources */,
 				ACE5178026A4324400027B64 /* ViewController.swift in Sources */,
 				ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */,
 				ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */,
+				ACE517AC26A4510E00027B64 /* TouchesVisualizerRecognizer.swift in Sources */,
+				ACE517B726A4515C00027B64 /* CGSize+Utils.swift in Sources */,
+				ACE517B526A4515200027B64 /* CGPoint+Utils.swift in Sources */,
+				ACE517B326A4514800027B64 /* CGRect+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
