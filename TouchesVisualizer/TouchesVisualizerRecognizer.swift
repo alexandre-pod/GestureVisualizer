@@ -17,9 +17,6 @@ class TouchesVisualizerRecognizer: UIGestureRecognizer, UIGestureRecognizerDeleg
     private var touches: Set<UITouch> = []
     private var touchesView = TouchesView()
 
-    private let touchFrameSize = CGSize(width: 100, height: 100)
-    private let touchesColor = UIColor.label
-
     // MARK: - Life cycle
 
     override init(target: Any?, action: Selector?) {

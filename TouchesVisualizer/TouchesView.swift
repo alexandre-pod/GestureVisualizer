@@ -25,7 +25,14 @@ class TouchesView: UIView {
         didSet { setNeedsDisplay() }
     }
 
-    private var touchRadius: CGFloat = 50
+    private let touchRadius: CGFloat = 40
+    private let touchStrokeWidth: CGFloat = 4
+
+    private let positionFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
 
     // MARK: - Life cycle
 
@@ -61,7 +68,7 @@ class TouchesView: UIView {
     }
 
     private func drawLines(in context: CGContext) {
-        context.setLineWidth(1)
+        context.setLineWidth(1 / UIScreen.main.scale)
         for line in configuration.lines {
             context.move(to: line.start)
             context.addLine(to: line.end)
@@ -70,24 +77,63 @@ class TouchesView: UIView {
     }
 
     private func drawTouches(in context: CGContext) {
-        let touchStrokeWidth: CGFloat = 3
-
-        context.setLineWidth(touchStrokeWidth)
-        let touchRadius = self.touchRadius - touchStrokeWidth / 2
-
-        for touchPosition in configuration.touches {
-            let path = UIBezierPath()
-            path.addArc(
-                withCenter: touchPosition,
-                radius: touchRadius,
-                startAngle: 0,
-                endAngle: 2 * CGFloat.pi,
-                clockwise: false
-            )
-            path.lineWidth = touchStrokeWidth
-            // This fill clears the line inside the touch circle
-            path.fill(with: .copy, alpha: 0)
-            path.stroke()
+        for (index, touchPosition) in configuration.touches.enumerated() {
+            drawTouch(touchPosition, in: context)
+            drawTouchDetails(touchPosition, index: index, in: context)
         }
+    }
+
+    private func drawTouch(_ touchPosition: CGPoint, in context: CGContext) {
+        let touchRadius = self.touchRadius - touchStrokeWidth / 2
+        let path = UIBezierPath()
+        path.addArc(
+            withCenter: touchPosition,
+            radius: touchRadius,
+            startAngle: 0,
+            endAngle: 2 * CGFloat.pi,
+            clockwise: false
+        )
+        path.lineWidth = touchStrokeWidth
+        // This fill clears the line inside the touch circle
+        path.fill(with: .copy, alpha: 0)
+        path.stroke()
+    }
+
+    private func drawTouchDetails(_ touchPosition: CGPoint, index: Int, in context: CGContext) {
+        drawText(
+            "#\(index)",
+            centeredOn: touchPosition + CGPoint(x: 0, y: -touchRadius * 1.5),
+            in: context
+        )
+        drawText(
+            positionFormatter.string(from: touchPosition.x as NSNumber) ?? "",
+            centeredOn: touchPosition + CGPoint(x: -touchRadius * 1.5, y: 0),
+            in: context
+        )
+        drawText(
+            positionFormatter.string(from: touchPosition.y as NSNumber) ?? "",
+            centeredOn: touchPosition + CGPoint(x: 0, y: touchRadius * 1.5),
+            rotationAngle: CGFloat.pi / 2,
+            in: context
+        )
+    }
+
+    private func drawText(
+        _ text: String,
+        centeredOn center: CGPoint,
+        rotationAngle angle: CGFloat = 0,
+        in context: CGContext
+    ) {
+        context.saveGState()
+        let indexText = NSAttributedString(
+            string: text,
+            attributes: [NSAttributedString.Key.foregroundColor: tintColor as Any]
+        )
+        let indexTextSize = indexText.size()
+        context.translateBy(x: center.x, y: center.y)
+        context.concatenate(CGAffineTransform(rotationAngle: angle))
+        indexText.draw(at: .zero - indexTextSize / 2)
+
+        context.restoreGState()
     }
 }

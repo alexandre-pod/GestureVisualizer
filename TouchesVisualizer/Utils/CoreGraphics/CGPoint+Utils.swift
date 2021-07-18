@@ -7,6 +7,22 @@
 
 import CoreGraphics
 
+extension CGPoint: AdditiveArithmetic {
+    public static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(
+            x: lhs.x + rhs.x,
+            y: lhs.y + rhs.y
+        )
+    }
+
+    public static func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(
+            x: lhs.x - rhs.x,
+            y: lhs.y - rhs.y
+        )
+    }
+}
+
 extension CGPoint {
     static func +(lhs: CGPoint, rhs: CGSize) -> CGPoint {
         return CGPoint(
