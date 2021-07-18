@@ -25,5 +25,9 @@ class ViewController: UIViewController {
         let pinchGestureRecognizer = PinchGestureRecognizer()
         pinchGestureRecognizer.tintColor = .label
         view.addGestureRecognizer(pinchGestureRecognizer)
+
+        let rotationGestureVisualizer = RotationGestureVisualizer()
+        rotationGestureVisualizer.tintColor = .label
+        view.addGestureRecognizer(rotationGestureVisualizer)
     }
 }

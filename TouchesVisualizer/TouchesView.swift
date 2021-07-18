@@ -100,40 +100,21 @@ class TouchesView: UIView {
     }
 
     private func drawTouchDetails(_ touchPosition: CGPoint, index: Int, in context: CGContext) {
-        drawText(
+        context.drawText(
             "#\(index)",
             centeredOn: touchPosition + CGPoint(x: 0, y: -touchRadius * 1.5),
-            in: context
+            color: tintColor
         )
-        drawText(
+        context.drawText(
             positionFormatter.string(from: touchPosition.x as NSNumber) ?? "",
             centeredOn: touchPosition + CGPoint(x: -touchRadius * 1.5, y: 0),
-            in: context
+            color: tintColor
         )
-        drawText(
+        context.drawText(
             positionFormatter.string(from: touchPosition.y as NSNumber) ?? "",
             centeredOn: touchPosition + CGPoint(x: 0, y: touchRadius * 1.5),
             rotationAngle: CGFloat.pi / 2,
-            in: context
+            color: tintColor
         )
-    }
-
-    private func drawText(
-        _ text: String,
-        centeredOn center: CGPoint,
-        rotationAngle angle: CGFloat = 0,
-        in context: CGContext
-    ) {
-        context.saveGState()
-        let indexText = NSAttributedString(
-            string: text,
-            attributes: [NSAttributedString.Key.foregroundColor: tintColor as Any]
-        )
-        let indexTextSize = indexText.size()
-        context.translateBy(x: center.x, y: center.y)
-        context.concatenate(CGAffineTransform(rotationAngle: angle))
-        indexText.draw(at: .zero - indexTextSize / 2)
-
-        context.restoreGState()
     }
 }

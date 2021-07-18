@@ -1,5 +1,5 @@
 //
-//  PinchGestureRecognizer.swift
+//  RotationGestureVisualizer.swift
 //  TouchesVisualizer
 //
 //  Created by Alexandre Podlewski on 18/07/2021.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class PinchGestureRecognizer: UIPinchGestureRecognizer, UIGestureRecognizerDelegate {
-
+class RotationGestureVisualizer: UIRotationGestureRecognizer, UIGestureRecognizerDelegate {
     private let visualizerView = PinchVisualizerView()
     private var initialCenter: CGPoint?
     private var initialRadius: CGFloat?
@@ -23,7 +22,7 @@ class PinchGestureRecognizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
     override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
         self.delegate = self
-        addTarget(self, action: #selector(pinchGestureChanged(_:)))
+        addTarget(self, action: #selector(rotationGestureChanged(_:)))
         cancelsTouchesInView = false
         delaysTouchesBegan = false
         delaysTouchesEnded = false
@@ -40,7 +39,7 @@ class PinchGestureRecognizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
 
     // MARK: - Private
 
-    @objc private func pinchGestureChanged(_ sender: UIPinchGestureRecognizer) {
+    @objc private func rotationGestureChanged(_ sender: UIPinchGestureRecognizer) {
         installVisualizerViewIfNeeded()
         if state == .began {
             let center = touchesCenter()
@@ -53,7 +52,7 @@ class PinchGestureRecognizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
                 active: state == .began || state == .changed,
                 center: initialCenter ?? .zero,
                 initialRadius: initialRadius ?? 100,
-                scale: scale
+                rotation: rotation
             )
         )
     }
@@ -91,14 +90,20 @@ private class PinchVisualizerView: UIView {
         let active: Bool
         let center: CGPoint
         let initialRadius: CGFloat
-        let scale: CGFloat
+        let rotation: CGFloat
 
-        static let empty = Configuration(active: false, center: .zero, initialRadius: 100.0, scale: 1.0)
+        static let empty = Configuration(active: false, center: .zero, initialRadius: 100.0, rotation: 0.0)
     }
 
     private var configuration: Configuration = .empty {
         didSet { setNeedsDisplay() }
     }
+
+    private let angleNumberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 1
+        return formatter
+    }()
 
     // MARK: - Life cycle
 
@@ -135,7 +140,7 @@ private class PinchVisualizerView: UIView {
     private func drawIndicator(in context: CGContext) {
         guard configuration.active else { return }
 
-        let stokeWidth = 1 / UIScreen.main.scale
+        let stokeWidth: CGFloat = 16
         context.addArc(
             center: configuration.center,
             radius: configuration.initialRadius,
@@ -143,18 +148,31 @@ private class PinchVisualizerView: UIView {
             endAngle: 2 * CGFloat.pi,
             clockwise: false
         )
-        tintColor.withAlphaComponent(0.5).setStroke()
+        tintColor.withAlphaComponent(0.4).setStroke()
         context.setLineWidth(stokeWidth)
+        context.setLineCap(.round)
         context.strokePath()
+
         context.addArc(
             center: configuration.center,
-            radius: configuration.initialRadius * configuration.scale,
-            startAngle: 0,
-            endAngle: 2 * CGFloat.pi,
-            clockwise: false
+            radius: configuration.initialRadius,
+            startAngle: -CGFloat.pi / 2,
+            endAngle: -CGFloat.pi / 2 + configuration.rotation,
+            clockwise: configuration.rotation < 0
         )
         tintColor.setStroke()
-        context.setLineWidth(2 * stokeWidth)
+        context.setLineWidth(stokeWidth * 0.7)
+        context.setLineCap(.round)
         context.strokePath()
+
+
+        let angle = Measurement<UnitAngle>(value: configuration.rotation, unit: .radians)
+
+        let angleNumber = angle.converted(to: .degrees).value
+        context.drawText(
+            "\(angleNumberFormatter.string(for: angleNumber) ?? "")°",
+            centeredOn: configuration.center + CGPoint(x: 0, y: -configuration.initialRadius - 20),
+            color: tintColor
+        )
     }
 }
