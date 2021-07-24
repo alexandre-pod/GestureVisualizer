@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GestureVisualizer
 
 class ViewController: UIViewController {
 

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
+public class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
 
-    var tintColor: UIColor {
+    public var tintColor: UIColor {
         get { touchesView.tintColor }
         set { touchesView.tintColor = newValue }
     }
@@ -29,7 +29,7 @@ class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
 
     // MARK: - UIGestureRecognizer
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesBegan(touches, with: event)
         let isFirstTouch = touches.isEmpty
         touches.forEach { self.touches.insert($0) }
@@ -37,14 +37,14 @@ class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
         updateTouchesView()
     }
 
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
         touches.forEach { self.touches.insert($0) }
         state = .changed
         updateTouchesView()
     }
 
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesCancelled(touches, with: event)
         let allCancelled = self.touches.count == touches.count
         touches.forEach { self.touches.remove($0) }
@@ -52,7 +52,7 @@ class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
         updateTouchesView()
     }
 
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesEnded(touches, with: event)
         let allTouchesRemoved = self.touches.count == touches.count
         touches.forEach { self.touches.remove($0) }
@@ -62,7 +62,7 @@ class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
 
     // MARK: - UIGestureRecognizerDelegate
 
-    func gestureRecognizer(
+    public func gestureRecognizer(
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
     ) -> Bool {

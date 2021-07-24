@@ -14,17 +14,7 @@
 		ACE5178826A4324600027B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5178626A4324600027B64 /* LaunchScreen.storyboard */; };
 		ACE5179326A4324600027B64 /* TouchesVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */; };
 		ACE5179D26A4324600027B64 /* TouchesVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */; };
-		ACE517AC26A4510E00027B64 /* TouchesVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517AB26A4510E00027B64 /* TouchesVisualizer.swift */; };
-		ACE517B326A4514800027B64 /* CGRect+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B226A4514800027B64 /* CGRect+Utils.swift */; };
-		ACE517B526A4515200027B64 /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B426A4515200027B64 /* CGPoint+Utils.swift */; };
-		ACE517B726A4515C00027B64 /* CGSize+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B626A4515C00027B64 /* CGSize+Utils.swift */; };
-		ACE517BA26A4609F00027B64 /* UIKit+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517B926A4609F00027B64 /* UIKit+Layout.swift */; };
-		ACE517C426A4745700027B64 /* TouchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517C326A4745700027B64 /* TouchesView.swift */; };
-		ACE517C626A4810200027B64 /* PrimsAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517C526A4810200027B64 /* PrimsAlgorithm.swift */; };
-		ACE517C826A4C25000027B64 /* PinchGestureVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517C726A4C25000027B64 /* PinchGestureVisualizer.swift */; };
-		ACE517CA26A4CFC000027B64 /* RotationGestureVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517C926A4CFC000027B64 /* RotationGestureVisualizer.swift */; };
-		ACE517CC26A4D46200027B64 /* CGContext+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517CB26A4D46200027B64 /* CGContext+Utils.swift */; };
-		ACE517D126ACCD7B00027B64 /* GestureVisualizerTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517D026ACCD7B00027B64 /* GestureVisualizerTarget.swift */; };
+		ACE517D526ACD8D900027B64 /* GestureVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = ACE517D426ACD8D900027B64 /* GestureVisualizer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,17 +46,7 @@
 		ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerTests.swift; sourceTree = "<group>"; };
 		ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchesVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerUITests.swift; sourceTree = "<group>"; };
-		ACE517AB26A4510E00027B64 /* TouchesVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizer.swift; sourceTree = "<group>"; };
-		ACE517B226A4514800027B64 /* CGRect+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Utils.swift"; sourceTree = "<group>"; };
-		ACE517B426A4515200027B64 /* CGPoint+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
-		ACE517B626A4515C00027B64 /* CGSize+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Utils.swift"; sourceTree = "<group>"; };
-		ACE517B926A4609F00027B64 /* UIKit+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Layout.swift"; sourceTree = "<group>"; };
-		ACE517C326A4745700027B64 /* TouchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesView.swift; sourceTree = "<group>"; };
-		ACE517C526A4810200027B64 /* PrimsAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimsAlgorithm.swift; sourceTree = "<group>"; };
-		ACE517C726A4C25000027B64 /* PinchGestureVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureVisualizer.swift; sourceTree = "<group>"; };
-		ACE517C926A4CFC000027B64 /* RotationGestureVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationGestureVisualizer.swift; sourceTree = "<group>"; };
-		ACE517CB26A4D46200027B64 /* CGContext+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+Utils.swift"; sourceTree = "<group>"; };
-		ACE517D026ACCD7B00027B64 /* GestureVisualizerTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVisualizerTarget.swift; sourceTree = "<group>"; };
+		ACE517D226ACD8B800027B64 /* GestureVisualizer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GestureVisualizer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE517D526ACD8D900027B64 /* GestureVisualizer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +78,12 @@
 		ACE5176F26A4324400027B64 = {
 			isa = PBXGroup;
 			children = (
+				ACE517D226ACD8B800027B64 /* GestureVisualizer */,
 				ACE5177A26A4324400027B64 /* TouchesVisualizer */,
 				ACE5179126A4324600027B64 /* TouchesVisualizerTests */,
 				ACE5179B26A4324600027B64 /* TouchesVisualizerUITests */,
 				ACE5177926A4324400027B64 /* Products */,
+				ACE517D326ACD8D900027B64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,11 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				ACE517CD26ACBE9900027B64 /* Visualizers */,
-				ACE517AD26A4512000027B64 /* Utils */,
 				ACE5177B26A4324400027B64 /* AppDelegate.swift */,
 				ACE5177D26A4324400027B64 /* SceneDelegate.swift */,
 				ACE5177F26A4324400027B64 /* ViewController.swift */,
-				ACE517C526A4810200027B64 /* PrimsAlgorithm.swift */,
 				ACE5178426A4324600027B64 /* Assets.xcassets */,
 				ACE5178626A4324600027B64 /* LaunchScreen.storyboard */,
 				ACE5178926A4324600027B64 /* Info.plist */,
@@ -146,44 +127,18 @@
 			path = TouchesVisualizerUITests;
 			sourceTree = "<group>";
 		};
-		ACE517AD26A4512000027B64 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				ACE517B826A4609600027B64 /* UIKit */,
-				ACE517B126A4513D00027B64 /* CoreGraphics */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		ACE517B126A4513D00027B64 /* CoreGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				ACE517B226A4514800027B64 /* CGRect+Utils.swift */,
-				ACE517B426A4515200027B64 /* CGPoint+Utils.swift */,
-				ACE517B626A4515C00027B64 /* CGSize+Utils.swift */,
-				ACE517CB26A4D46200027B64 /* CGContext+Utils.swift */,
-			);
-			path = CoreGraphics;
-			sourceTree = "<group>";
-		};
-		ACE517B826A4609600027B64 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				ACE517B926A4609F00027B64 /* UIKit+Layout.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		ACE517CD26ACBE9900027B64 /* Visualizers */ = {
 			isa = PBXGroup;
 			children = (
-				ACE517AB26A4510E00027B64 /* TouchesVisualizer.swift */,
-				ACE517C726A4C25000027B64 /* PinchGestureVisualizer.swift */,
-				ACE517C926A4CFC000027B64 /* RotationGestureVisualizer.swift */,
-				ACE517D026ACCD7B00027B64 /* GestureVisualizerTarget.swift */,
-				ACE517C326A4745700027B64 /* TouchesView.swift */,
 			);
 			path = Visualizers;
+			sourceTree = "<group>";
+		};
+		ACE517D326ACD8D900027B64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +158,7 @@
 			);
 			name = TouchesVisualizer;
 			packageProductDependencies = (
+				ACE517D426ACD8D900027B64 /* GestureVisualizer */,
 			);
 			productName = TouchesVisualizer;
 			productReference = ACE5177826A4324400027B64 /* TouchesVisualizer.app */;
@@ -321,19 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE5178026A4324400027B64 /* ViewController.swift in Sources */,
-				ACE517CC26A4D46200027B64 /* CGContext+Utils.swift in Sources */,
 				ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */,
 				ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */,
-				ACE517C826A4C25000027B64 /* PinchGestureVisualizer.swift in Sources */,
-				ACE517AC26A4510E00027B64 /* TouchesVisualizer.swift in Sources */,
-				ACE517B726A4515C00027B64 /* CGSize+Utils.swift in Sources */,
-				ACE517C426A4745700027B64 /* TouchesView.swift in Sources */,
-				ACE517B526A4515200027B64 /* CGPoint+Utils.swift in Sources */,
-				ACE517BA26A4609F00027B64 /* UIKit+Layout.swift in Sources */,
-				ACE517B326A4514800027B64 /* CGRect+Utils.swift in Sources */,
-				ACE517C626A4810200027B64 /* PrimsAlgorithm.swift in Sources */,
-				ACE517CA26A4CFC000027B64 /* RotationGestureVisualizer.swift in Sources */,
-				ACE517D126ACCD7B00027B64 /* GestureVisualizerTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +637,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACE517D426ACD8D900027B64 /* GestureVisualizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GestureVisualizer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACE5177026A4324400027B64 /* Project object */;
 }
