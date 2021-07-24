@@ -52,6 +52,7 @@ class TouchesView: UIView {
             tintColor.setStroke()
             // Draw lines need to be called before the touches to remove the lines from the circles
             drawLines(in: context)
+            clearBelowTouches(in: context)
             drawTouches(in: context)
         }
     }
@@ -76,14 +77,20 @@ class TouchesView: UIView {
         context.strokePath()
     }
 
+    private func clearBelowTouches(in context: CGContext) {
+        for touchPosition in configuration.touches {
+            touchPath(at: touchPosition).fill(with: .copy, alpha: 0)
+        }
+    }
+
     private func drawTouches(in context: CGContext) {
         for (index, touchPosition) in configuration.touches.enumerated() {
-            drawTouch(touchPosition, in: context)
+            touchPath(at: touchPosition).stroke()
             drawTouchDetails(touchPosition, index: index, in: context)
         }
     }
 
-    private func drawTouch(_ touchPosition: CGPoint, in context: CGContext) {
+    private func touchPath(at touchPosition: CGPoint) -> UIBezierPath {
         let touchRadius = self.touchRadius - touchStrokeWidth / 2
         let path = UIBezierPath()
         path.addArc(
@@ -94,9 +101,7 @@ class TouchesView: UIView {
             clockwise: false
         )
         path.lineWidth = touchStrokeWidth
-        // This fill clears the line inside the touch circle
-        path.fill(with: .copy, alpha: 0)
-        path.stroke()
+        return path
     }
 
     private func drawTouchDetails(_ touchPosition: CGPoint, index: Int, in context: CGContext) {
