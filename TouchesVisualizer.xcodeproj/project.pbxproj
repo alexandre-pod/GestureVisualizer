@@ -115,14 +115,11 @@
 		ACE5177A26A4324400027B64 /* TouchesVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				ACE517CD26ACBE9900027B64 /* Visualizers */,
 				ACE517AD26A4512000027B64 /* Utils */,
 				ACE5177B26A4324400027B64 /* AppDelegate.swift */,
 				ACE5177D26A4324400027B64 /* SceneDelegate.swift */,
 				ACE5177F26A4324400027B64 /* ViewController.swift */,
-				ACE517AB26A4510E00027B64 /* TouchesVisualizerRecognizer.swift */,
-				ACE517C726A4C25000027B64 /* PinchGestureRecognizer.swift */,
-				ACE517C926A4CFC000027B64 /* RotationGestureVisualizer.swift */,
-				ACE517C326A4745700027B64 /* TouchesView.swift */,
 				ACE517C526A4810200027B64 /* PrimsAlgorithm.swift */,
 				ACE5178426A4324600027B64 /* Assets.xcassets */,
 				ACE5178626A4324600027B64 /* LaunchScreen.storyboard */,
@@ -173,6 +170,17 @@
 				ACE517B926A4609F00027B64 /* UIKit+Layout.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		ACE517CD26ACBE9900027B64 /* Visualizers */ = {
+			isa = PBXGroup;
+			children = (
+				ACE517AB26A4510E00027B64 /* TouchesVisualizerRecognizer.swift */,
+				ACE517C726A4C25000027B64 /* PinchGestureRecognizer.swift */,
+				ACE517C926A4CFC000027B64 /* RotationGestureVisualizer.swift */,
+				ACE517C326A4745700027B64 /* TouchesView.swift */,
+			);
+			path = Visualizers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -474,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
