@@ -18,13 +18,13 @@ class ViewController: UIViewController {
 
         view.backgroundColor = Constant.backgroundColor
 
-        let touchesVisualizer = TouchesVisualizerRecognizer()
+        let touchesVisualizer = TouchesVisualizer()
         touchesVisualizer.tintColor = .label
         view.addGestureRecognizer(touchesVisualizer)
 
-        let pinchGestureRecognizer = PinchGestureRecognizer()
-        pinchGestureRecognizer.tintColor = .label
-        view.addGestureRecognizer(pinchGestureRecognizer)
+        let pinchGestureVisualizer = PinchGestureVisualizer()
+        pinchGestureVisualizer.tintColor = .label
+        view.addGestureRecognizer(pinchGestureVisualizer)
 
         let rotationGestureVisualizer = RotationGestureVisualizer()
         rotationGestureVisualizer.tintColor = .label

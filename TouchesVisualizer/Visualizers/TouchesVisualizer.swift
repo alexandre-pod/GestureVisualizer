@@ -1,5 +1,5 @@
 //
-//  TouchesVisualizerRecognizer.swift
+//  TouchesVisualizer.swift
 //  TouchesVisualizer
 //
 //  Created by Alexandre Podlewski on 18/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TouchesVisualizerRecognizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
+class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
 
     var tintColor: UIColor {
         get { touchesView.tintColor }

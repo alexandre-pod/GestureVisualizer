@@ -1,5 +1,5 @@
 //
-//  PinchGestureRecognizer.swift
+//  PinchGestureVisualizer.swift
 //  TouchesVisualizer
 //
 //  Created by Alexandre Podlewski on 18/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PinchGestureRecognizer: UIPinchGestureRecognizer, UIGestureRecognizerDelegate {
+class PinchGestureVisualizer: UIPinchGestureRecognizer, UIGestureRecognizerDelegate {
 
     private let visualizerView = PinchVisualizerView()
     private var initialCenter: CGPoint?
