@@ -10,8 +10,8 @@ import UIKit
 class PinchGestureVisualizer: UIPinchGestureRecognizer, UIGestureRecognizerDelegate {
 
     private let visualizerView = PinchVisualizerView()
-    private var initialCenter: CGPoint?
-    private var initialRadius: CGFloat?
+    var visualizerTarget = GestureVisualizerTarget()
+    private var isVisualizerTargetShared = false
 
     var tintColor: UIColor {
         get { visualizerView.tintColor }
@@ -35,6 +35,10 @@ class PinchGestureVisualizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
         _ gestureRecognizer: UIGestureRecognizer,
         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
     ) -> Bool {
+        if let visualizerSharingTarget = otherGestureRecognizer as? VisualizerSharingTarget {
+            visualizerTarget = visualizerSharingTarget.gestureVisualizerTarget
+            isVisualizerTargetShared = true
+        }
         return true
     }
 
@@ -42,18 +46,28 @@ class PinchGestureVisualizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
 
     @objc private func pinchGestureChanged(_ sender: UIPinchGestureRecognizer) {
         installVisualizerViewIfNeeded()
-        if state == .began {
-            let center = touchesCenter()
-            initialCenter = center
-            initialRadius = initialFirstPointRadius(to: center)
+        if
+            isVisualizerTargetShared,
+            state == .cancelled || state == .ended || state == .failed
+        {
+            visualizerTarget = GestureVisualizerTarget()
+            isVisualizerTargetShared = false
         }
-        print(state == .ended)
+        if
+            !isVisualizerTargetShared,
+            state == .began
+        {
+            let center = touchesCenter()
+            visualizerTarget.center = center
+            visualizerTarget.initialRadius = initialFirstPointRadius(to: center)
+        }
+        visualizerTarget.currentScaleFactor = scale
         visualizerView.configure(
             with: PinchVisualizerView.Configuration(
                 active: state == .began || state == .changed,
-                center: initialCenter ?? .zero,
-                initialRadius: initialRadius ?? 100,
-                scale: scale
+                center: visualizerTarget.center,
+                initialRadius: visualizerTarget.initialRadius,
+                scale: visualizerTarget.currentScaleFactor ?? scale
             )
         )
     }
@@ -83,6 +97,13 @@ class PinchGestureVisualizer: UIPinchGestureRecognizer, UIGestureRecognizerDeleg
         let dy = center.y - firstPointLocation.y
         return sqrt(dx * dx + dy * dy)
     }
+}
+
+extension PinchGestureVisualizer: VisualizerSharingTarget {
+
+    // MARK: - VisualizerSharingTarget
+
+    var gestureVisualizerTarget: GestureVisualizerTarget { visualizerTarget }
 }
 
 private class PinchVisualizerView: UIView {
