@@ -7,17 +7,17 @@
 
 import UIKit
 
-
-public class RotationGestureVisualizer: UIRotationGestureRecognizer, UIGestureRecognizerDelegate {
-
-    private let visualizerView = PinchVisualizerView()
-    var visualizerTarget = GestureVisualizerTarget()
-    private var isVisualizerTargetShared = false
+public class RotationGestureVisualizer: UIRotationGestureRecognizer {
 
     public var tintColor: UIColor {
         get { visualizerView.tintColor }
         set { visualizerView.tintColor = newValue }
     }
+
+    var visualizerTarget = GestureVisualizerTarget()
+
+    private let visualizerView = RotationVisualizerView()
+    private var isVisualizerTargetShared = false
 
     // MARK: - Life cycle
 
@@ -28,19 +28,6 @@ public class RotationGestureVisualizer: UIRotationGestureRecognizer, UIGestureRe
         cancelsTouchesInView = false
         delaysTouchesBegan = false
         delaysTouchesEnded = false
-    }
-
-    // MARK: - UIGestureRecognizerDelegate
-
-    public func gestureRecognizer(
-        _ gestureRecognizer: UIGestureRecognizer,
-        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
-    ) -> Bool {
-        if let visualizerSharingTarget = otherGestureRecognizer as? VisualizerSharingTarget {
-            visualizerTarget = visualizerSharingTarget.gestureVisualizerTarget
-            isVisualizerTargetShared = true
-        }
-        return true
     }
 
     // MARK: - Private
@@ -64,7 +51,7 @@ public class RotationGestureVisualizer: UIRotationGestureRecognizer, UIGestureRe
         }
         visualizerTarget.currentRotationFactor = rotation
         visualizerView.configure(
-            with: PinchVisualizerView.Configuration(
+            with: RotationVisualizerView.Configuration(
                 active: state == .began || state == .changed,
                 center: visualizerTarget.center,
                 initialRadius: visualizerTarget.currentRadius + 16,
@@ -100,104 +87,27 @@ public class RotationGestureVisualizer: UIRotationGestureRecognizer, UIGestureRe
     }
 }
 
+extension RotationGestureVisualizer: UIGestureRecognizerDelegate {
+
+    // MARK: - UIGestureRecognizerDelegate
+
+    public func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
+    ) -> Bool {
+        if let visualizerSharingTarget = otherGestureRecognizer as? VisualizerSharingTarget {
+            visualizerTarget = visualizerSharingTarget.gestureVisualizerTarget
+            isVisualizerTargetShared = true
+        }
+        return true
+    }
+}
+
 extension RotationGestureVisualizer: VisualizerSharingTarget {
 
     // MARK: - VisualizerSharingTarget
 
     var gestureVisualizerTarget: GestureVisualizerTarget {
         self.visualizerTarget
-    }
-}
-
-private class PinchVisualizerView: UIView {
-
-    struct Configuration {
-        let active: Bool
-        let center: CGPoint
-        let initialRadius: CGFloat
-        let rotation: CGFloat
-
-        static let empty = Configuration(active: false, center: .zero, initialRadius: 100.0, rotation: 0.0)
-    }
-
-    private var configuration: Configuration = .empty {
-        didSet { setNeedsDisplay() }
-    }
-
-    private let angleNumberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 1
-        return formatter
-    }()
-
-    // MARK: - Life cycle
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        if let context = UIGraphicsGetCurrentContext() {
-            drawIndicator(in: context)
-        }
-    }
-
-    // MARK: - PinchVisualizerView
-
-    func configure(with viewModel: Configuration) {
-        configuration = viewModel
-    }
-
-    // MARK: - Private
-
-    private func setup() {
-        isOpaque = false
-        isUserInteractionEnabled = false
-    }
-
-    private func drawIndicator(in context: CGContext) {
-        guard configuration.active else { return }
-
-        let stokeWidth: CGFloat = 16
-        context.addArc(
-            center: configuration.center,
-            radius: configuration.initialRadius,
-            startAngle: 0,
-            endAngle: 2 * CGFloat.pi,
-            clockwise: false
-        )
-        tintColor.withAlphaComponent(0.4).setStroke()
-        context.setLineWidth(stokeWidth)
-        context.setLineCap(.round)
-        context.strokePath()
-
-        context.addArc(
-            center: configuration.center,
-            radius: configuration.initialRadius,
-            startAngle: -CGFloat.pi / 2,
-            endAngle: -CGFloat.pi / 2 + configuration.rotation,
-            clockwise: configuration.rotation < 0
-        )
-        tintColor.setStroke()
-        context.setLineWidth(stokeWidth * 0.7)
-        context.setLineCap(.round)
-        context.strokePath()
-
-
-        let angle = Measurement<UnitAngle>(value: configuration.rotation, unit: .radians)
-
-        let angleNumber = angle.converted(to: .degrees).value
-        context.drawText(
-            "\(angleNumberFormatter.string(for: angleNumber) ?? "")°",
-            centeredOn: configuration.center + CGPoint(x: 0, y: -configuration.initialRadius - 20),
-            color: tintColor
-        )
     }
 }

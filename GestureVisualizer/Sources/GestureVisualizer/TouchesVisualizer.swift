@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate {
+public class TouchesVisualizer: UIGestureRecognizer {
 
     public var tintColor: UIColor {
         get { touchesView.tintColor }
@@ -60,15 +60,6 @@ public class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate
         updateTouchesView()
     }
 
-    // MARK: - UIGestureRecognizerDelegate
-
-    public func gestureRecognizer(
-        _ gestureRecognizer: UIGestureRecognizer,
-        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
-    ) -> Bool {
-        return true
-    }
-
     // MARK: - Private
 
     private func updateTouchesView() {
@@ -96,6 +87,18 @@ public class TouchesVisualizer: UIGestureRecognizer, UIGestureRecognizerDelegate
         PrimsAlgorithm(nodes: points)
             .execute()
             .map { TouchesViewConfiguration.Line(start: $0.node1, end: $0.node2) }
+    }
+}
+
+extension TouchesVisualizer: UIGestureRecognizerDelegate {
+
+    // MARK: - UIGestureRecognizerDelegate
+
+    public func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
+    ) -> Bool {
+        return true
     }
 }
 
