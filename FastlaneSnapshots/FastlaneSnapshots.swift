@@ -13,5 +13,6 @@ class FastlaneSnapshots: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
+        snapshot("0Launch")
     }
 }
