@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC55AFAC26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */; };
+		AC55AFAE26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */; };
+		AC55AFB126AF839F00255B34 /* ScreenshotScenario+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */; };
 		ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177B26A4324400027B64 /* AppDelegate.swift */; };
 		ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177D26A4324400027B64 /* SceneDelegate.swift */; };
 		ACE5178026A4324400027B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177F26A4324400027B64 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsScenarioViewController.swift; sourceTree = "<group>"; };
+		AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+GestureVisualizer.swift"; sourceTree = "<group>"; };
+		AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+Environment.swift"; sourceTree = "<group>"; };
 		ACE5177826A4324400027B64 /* TouchesVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchesVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5177B26A4324400027B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5177D26A4324400027B64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC55AFAF26AF834500255B34 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */,
+				AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */,
+				AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		ACE5176F26A4324400027B64 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,7 @@
 		ACE5177A26A4324400027B64 /* TouchesVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				AC55AFAF26AF834500255B34 /* Screenshots */,
 				ACE517CD26ACBE9900027B64 /* Visualizers */,
 				ACE5177B26A4324400027B64 /* AppDelegate.swift */,
 				ACE5177D26A4324400027B64 /* SceneDelegate.swift */,
@@ -337,8 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE5178026A4324400027B64 /* ViewController.swift in Sources */,
+				AC55AFAE26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift in Sources */,
 				ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */,
+				AC55AFAC26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift in Sources */,
 				ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */,
+				AC55AFB126AF839F00255B34 /* ScreenshotScenario+Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

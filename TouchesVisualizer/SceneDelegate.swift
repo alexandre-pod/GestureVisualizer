@@ -14,7 +14,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        installRootViewController()
         window?.makeKeyAndVisible()
+    }
+
+    // MARK: - Private
+
+    private func installRootViewController() {
+#if DEBUG
+        if
+            let screenshotScenario = ProcessInfo.processInfo.environment["screenshot"],
+            let scenario = ScreenshotScenario(fromEnvironment: screenshotScenario)
+        {
+            window?.rootViewController = ScreenshotsScenarioViewController(scenario)
+        } else {
+            window?.rootViewController = ViewController()
+        }
+#else
+        window?.rootViewController = ViewController()
+#endif
     }
 }
