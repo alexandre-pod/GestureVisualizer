@@ -15,28 +15,12 @@
 		ACE5178026A4324400027B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177F26A4324400027B64 /* ViewController.swift */; };
 		ACE5178526A4324600027B64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE5178426A4324600027B64 /* Assets.xcassets */; };
 		ACE5178826A4324600027B64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5178626A4324600027B64 /* LaunchScreen.storyboard */; };
-		ACE5179326A4324600027B64 /* TouchesVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */; };
-		ACE5179D26A4324600027B64 /* TouchesVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */; };
 		ACE517D526ACD8D900027B64 /* GestureVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = ACE517D426ACD8D900027B64 /* GestureVisualizer */; };
 		ACE517DD26AE3BEE00027B64 /* FastlaneSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */; };
 		ACE517EA26AE3CFE00027B64 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517E826AE3CFE00027B64 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		ACE5178F26A4324600027B64 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACE5177026A4324400027B64 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACE5177726A4324400027B64;
-			remoteInfo = TouchesVisualizer;
-		};
-		ACE5179926A4324600027B64 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACE5177026A4324400027B64 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACE5177726A4324400027B64;
-			remoteInfo = TouchesVisualizer;
-		};
 		ACE517DE26AE3BEE00027B64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ACE5177026A4324400027B64 /* Project object */;
@@ -57,10 +41,6 @@
 		ACE5178426A4324600027B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE5178726A4324600027B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACE5178926A4324600027B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACE5178E26A4324600027B64 /* TouchesVisualizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchesVisualizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerTests.swift; sourceTree = "<group>"; };
-		ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchesVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerUITests.swift; sourceTree = "<group>"; };
 		ACE517D226ACD8B800027B64 /* GestureVisualizer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GestureVisualizer; sourceTree = "<group>"; };
 		ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastlaneSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshots.swift; sourceTree = "<group>"; };
@@ -73,20 +53,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE517D526ACD8D900027B64 /* GestureVisualizer in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACE5178B26A4324600027B64 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACE5179526A4324600027B64 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +81,6 @@
 			children = (
 				ACE517D226ACD8B800027B64 /* GestureVisualizer */,
 				ACE5177A26A4324400027B64 /* TouchesVisualizer */,
-				ACE5179126A4324600027B64 /* TouchesVisualizerTests */,
-				ACE5179B26A4324600027B64 /* TouchesVisualizerUITests */,
 				ACE517DB26AE3BEE00027B64 /* FastlaneSnapshots */,
 				ACE5177926A4324400027B64 /* Products */,
 				ACE517D326ACD8D900027B64 /* Frameworks */,
@@ -127,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				ACE5177826A4324400027B64 /* TouchesVisualizer.app */,
-				ACE5178E26A4324600027B64 /* TouchesVisualizerTests.xctest */,
-				ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */,
 				ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */,
 			);
 			name = Products;
@@ -147,22 +109,6 @@
 				ACE5178926A4324600027B64 /* Info.plist */,
 			);
 			path = TouchesVisualizer;
-			sourceTree = "<group>";
-		};
-		ACE5179126A4324600027B64 /* TouchesVisualizerTests */ = {
-			isa = PBXGroup;
-			children = (
-				ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */,
-			);
-			path = TouchesVisualizerTests;
-			sourceTree = "<group>";
-		};
-		ACE5179B26A4324600027B64 /* TouchesVisualizerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */,
-			);
-			path = TouchesVisualizerUITests;
 			sourceTree = "<group>";
 		};
 		ACE517CD26ACBE9900027B64 /* Visualizers */ = {
@@ -211,42 +157,6 @@
 			productReference = ACE5177826A4324400027B64 /* TouchesVisualizer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		ACE5178D26A4324600027B64 /* TouchesVisualizerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ACE517A326A4324600027B64 /* Build configuration list for PBXNativeTarget "TouchesVisualizerTests" */;
-			buildPhases = (
-				ACE5178A26A4324600027B64 /* Sources */,
-				ACE5178B26A4324600027B64 /* Frameworks */,
-				ACE5178C26A4324600027B64 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ACE5179026A4324600027B64 /* PBXTargetDependency */,
-			);
-			name = TouchesVisualizerTests;
-			productName = TouchesVisualizerTests;
-			productReference = ACE5178E26A4324600027B64 /* TouchesVisualizerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		ACE5179726A4324600027B64 /* TouchesVisualizerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ACE517A626A4324600027B64 /* Build configuration list for PBXNativeTarget "TouchesVisualizerUITests" */;
-			buildPhases = (
-				ACE5179426A4324600027B64 /* Sources */,
-				ACE5179526A4324600027B64 /* Frameworks */,
-				ACE5179626A4324600027B64 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ACE5179A26A4324600027B64 /* PBXTargetDependency */,
-			);
-			name = TouchesVisualizerUITests;
-			productName = TouchesVisualizerUITests;
-			productReference = ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		ACE517D926AE3BEE00027B64 /* FastlaneSnapshots */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACE517E226AE3BEE00027B64 /* Build configuration list for PBXNativeTarget "FastlaneSnapshots" */;
@@ -278,14 +188,6 @@
 					ACE5177726A4324400027B64 = {
 						CreatedOnToolsVersion = 13.0;
 					};
-					ACE5178D26A4324600027B64 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = ACE5177726A4324400027B64;
-					};
-					ACE5179726A4324600027B64 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = ACE5177726A4324400027B64;
-					};
 					ACE517D926AE3BEE00027B64 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = ACE5177726A4324400027B64;
@@ -308,8 +210,6 @@
 			projectRoot = "";
 			targets = (
 				ACE5177726A4324400027B64 /* TouchesVisualizer */,
-				ACE5178D26A4324600027B64 /* TouchesVisualizerTests */,
-				ACE5179726A4324600027B64 /* TouchesVisualizerUITests */,
 				ACE517D926AE3BEE00027B64 /* FastlaneSnapshots */,
 			);
 		};
@@ -322,20 +222,6 @@
 			files = (
 				ACE5178826A4324600027B64 /* LaunchScreen.storyboard in Resources */,
 				ACE5178526A4324600027B64 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACE5178C26A4324600027B64 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACE5179626A4324600027B64 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,22 +248,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ACE5178A26A4324600027B64 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ACE5179326A4324600027B64 /* TouchesVisualizerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ACE5179426A4324600027B64 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ACE5179D26A4324600027B64 /* TouchesVisualizerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ACE517D626AE3BEE00027B64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,16 +260,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ACE5179026A4324600027B64 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ACE5177726A4324400027B64 /* TouchesVisualizer */;
-			targetProxy = ACE5178F26A4324600027B64 /* PBXContainerItemProxy */;
-		};
-		ACE5179A26A4324600027B64 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ACE5177726A4324400027B64 /* TouchesVisualizer */;
-			targetProxy = ACE5179926A4324600027B64 /* PBXContainerItemProxy */;
-		};
 		ACE517DF26AE3BEE00027B64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = ACE5177726A4324400027B64 /* TouchesVisualizer */;
@@ -595,102 +455,6 @@
 			};
 			name = Release;
 		};
-		ACE517A426A4324600027B64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BY7K35VQV5;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.TouchesVisualizerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchesVisualizer.app/TouchesVisualizer";
-			};
-			name = Debug;
-		};
-		ACE517A526A4324600027B64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BY7K35VQV5;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.TouchesVisualizerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TouchesVisualizer.app/TouchesVisualizer";
-			};
-			name = Release;
-		};
-		ACE517A726A4324600027B64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BY7K35VQV5;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.TouchesVisualizerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TouchesVisualizer;
-			};
-			name = Debug;
-		};
-		ACE517A826A4324600027B64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BY7K35VQV5;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.TouchesVisualizerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TouchesVisualizer;
-			};
-			name = Release;
-		};
 		ACE517E026AE3BEE00027B64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -754,24 +518,6 @@
 			buildConfigurations = (
 				ACE517A126A4324600027B64 /* Debug */,
 				ACE517A226A4324600027B64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ACE517A326A4324600027B64 /* Build configuration list for PBXNativeTarget "TouchesVisualizerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACE517A426A4324600027B64 /* Debug */,
-				ACE517A526A4324600027B64 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ACE517A626A4324600027B64 /* Build configuration list for PBXNativeTarget "TouchesVisualizerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ACE517A726A4324600027B64 /* Debug */,
-				ACE517A826A4324600027B64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

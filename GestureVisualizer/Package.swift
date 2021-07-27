@@ -18,10 +18,6 @@ let package = Package(
         .target(
             name: "GestureVisualizer",
             dependencies: []
-        ),
-        .testTarget(
-            name: "GestureVisualizerTests",
-            dependencies: ["GestureVisualizer"]
-        ),
+        )
     ]
 )
