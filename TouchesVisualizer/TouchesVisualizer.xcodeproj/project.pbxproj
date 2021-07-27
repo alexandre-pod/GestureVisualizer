@@ -34,6 +34,7 @@
 		AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsScenarioViewController.swift; sourceTree = "<group>"; };
 		AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+GestureVisualizer.swift"; sourceTree = "<group>"; };
 		AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+Environment.swift"; sourceTree = "<group>"; };
+		AC55AFBC26B032AF00255B34 /* GestureVisualizer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GestureVisualizer; path = ..; sourceTree = "<group>"; };
 		ACE5177826A4324400027B64 /* TouchesVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchesVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5177B26A4324400027B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5177D26A4324400027B64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		ACE5178426A4324600027B64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE5178726A4324600027B64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACE5178926A4324600027B64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACE517D226ACD8B800027B64 /* GestureVisualizer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GestureVisualizer; sourceTree = "<group>"; };
 		ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastlaneSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshots.swift; sourceTree = "<group>"; };
 		ACE517E826AE3CFE00027B64 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		ACE5176F26A4324400027B64 = {
 			isa = PBXGroup;
 			children = (
-				ACE517D226ACD8B800027B64 /* GestureVisualizer */,
+				AC55AFBC26B032AF00255B34 /* GestureVisualizer */,
 				ACE5177A26A4324400027B64 /* TouchesVisualizer */,
 				ACE517DB26AE3BEE00027B64 /* FastlaneSnapshots */,
 				ACE5177926A4324400027B64 /* Products */,
