@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC55AFAC26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */; };
+		AC55AFAE26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */; };
+		AC55AFB126AF839F00255B34 /* ScreenshotScenario+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */; };
 		ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177B26A4324400027B64 /* AppDelegate.swift */; };
 		ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177D26A4324400027B64 /* SceneDelegate.swift */; };
 		ACE5178026A4324400027B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5177F26A4324400027B64 /* ViewController.swift */; };
@@ -15,6 +18,8 @@
 		ACE5179326A4324600027B64 /* TouchesVisualizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179226A4324600027B64 /* TouchesVisualizerTests.swift */; };
 		ACE5179D26A4324600027B64 /* TouchesVisualizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */; };
 		ACE517D526ACD8D900027B64 /* GestureVisualizer in Frameworks */ = {isa = PBXBuildFile; productRef = ACE517D426ACD8D900027B64 /* GestureVisualizer */; };
+		ACE517DD26AE3BEE00027B64 /* FastlaneSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */; };
+		ACE517EA26AE3CFE00027B64 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE517E826AE3CFE00027B64 /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +37,19 @@
 			remoteGlobalIDString = ACE5177726A4324400027B64;
 			remoteInfo = TouchesVisualizer;
 		};
+		ACE517DE26AE3BEE00027B64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACE5177026A4324400027B64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACE5177726A4324400027B64;
+			remoteInfo = TouchesVisualizer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsScenarioViewController.swift; sourceTree = "<group>"; };
+		AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+GestureVisualizer.swift"; sourceTree = "<group>"; };
+		AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenshotScenario+Environment.swift"; sourceTree = "<group>"; };
 		ACE5177826A4324400027B64 /* TouchesVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchesVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5177B26A4324400027B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5177D26A4324400027B64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +62,9 @@
 		ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchesVisualizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5179C26A4324600027B64 /* TouchesVisualizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesVisualizerUITests.swift; sourceTree = "<group>"; };
 		ACE517D226ACD8B800027B64 /* GestureVisualizer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GestureVisualizer; sourceTree = "<group>"; };
+		ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastlaneSnapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneSnapshots.swift; sourceTree = "<group>"; };
+		ACE517E826AE3CFE00027B64 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +90,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACE517D726AE3BEE00027B64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC55AFAF26AF834500255B34 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				AC55AFAB26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift */,
+				AC55AFAD26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift */,
+				AC55AFB026AF839F00255B34 /* ScreenshotScenario+Environment.swift */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		ACE5176F26A4324400027B64 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +117,7 @@
 				ACE5177A26A4324400027B64 /* TouchesVisualizer */,
 				ACE5179126A4324600027B64 /* TouchesVisualizerTests */,
 				ACE5179B26A4324600027B64 /* TouchesVisualizerUITests */,
+				ACE517DB26AE3BEE00027B64 /* FastlaneSnapshots */,
 				ACE5177926A4324400027B64 /* Products */,
 				ACE517D326ACD8D900027B64 /* Frameworks */,
 			);
@@ -93,6 +129,7 @@
 				ACE5177826A4324400027B64 /* TouchesVisualizer.app */,
 				ACE5178E26A4324600027B64 /* TouchesVisualizerTests.xctest */,
 				ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */,
+				ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +137,7 @@
 		ACE5177A26A4324400027B64 /* TouchesVisualizer */ = {
 			isa = PBXGroup;
 			children = (
+				AC55AFAF26AF834500255B34 /* Screenshots */,
 				ACE517CD26ACBE9900027B64 /* Visualizers */,
 				ACE5177B26A4324400027B64 /* AppDelegate.swift */,
 				ACE5177D26A4324400027B64 /* SceneDelegate.swift */,
@@ -139,6 +177,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACE517DB26AE3BEE00027B64 /* FastlaneSnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				ACE517DC26AE3BEE00027B64 /* FastlaneSnapshots.swift */,
+				ACE517E826AE3CFE00027B64 /* SnapshotHelper.swift */,
+			);
+			path = FastlaneSnapshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +247,24 @@
 			productReference = ACE5179826A4324600027B64 /* TouchesVisualizerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ACE517D926AE3BEE00027B64 /* FastlaneSnapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE517E226AE3BEE00027B64 /* Build configuration list for PBXNativeTarget "FastlaneSnapshots" */;
+			buildPhases = (
+				ACE517D626AE3BEE00027B64 /* Sources */,
+				ACE517D726AE3BEE00027B64 /* Frameworks */,
+				ACE517D826AE3BEE00027B64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACE517DF26AE3BEE00027B64 /* PBXTargetDependency */,
+			);
+			name = FastlaneSnapshots;
+			productName = FastlaneSnapshots;
+			productReference = ACE517DA26AE3BEE00027B64 /* FastlaneSnapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -218,6 +283,10 @@
 						TestTargetID = ACE5177726A4324400027B64;
 					};
 					ACE5179726A4324600027B64 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = ACE5177726A4324400027B64;
+					};
+					ACE517D926AE3BEE00027B64 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = ACE5177726A4324400027B64;
 					};
@@ -241,6 +310,7 @@
 				ACE5177726A4324400027B64 /* TouchesVisualizer */,
 				ACE5178D26A4324600027B64 /* TouchesVisualizerTests */,
 				ACE5179726A4324600027B64 /* TouchesVisualizerUITests */,
+				ACE517D926AE3BEE00027B64 /* FastlaneSnapshots */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +339,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACE517D826AE3BEE00027B64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,8 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE5178026A4324400027B64 /* ViewController.swift in Sources */,
+				AC55AFAE26AF802500255B34 /* ScreenshotScenario+GestureVisualizer.swift in Sources */,
 				ACE5177C26A4324400027B64 /* AppDelegate.swift in Sources */,
+				AC55AFAC26AF7FF200255B34 /* ScreenshotsScenarioViewController.swift in Sources */,
 				ACE5177E26A4324400027B64 /* SceneDelegate.swift in Sources */,
+				AC55AFB126AF839F00255B34 /* ScreenshotScenario+Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +378,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACE517D626AE3BEE00027B64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE517DD26AE3BEE00027B64 /* FastlaneSnapshots.swift in Sources */,
+				ACE517EA26AE3CFE00027B64 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -310,6 +399,11 @@
 			isa = PBXTargetDependency;
 			target = ACE5177726A4324400027B64 /* TouchesVisualizer */;
 			targetProxy = ACE5179926A4324600027B64 /* PBXContainerItemProxy */;
+		};
+		ACE517DF26AE3BEE00027B64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACE5177726A4324400027B64 /* TouchesVisualizer */;
+			targetProxy = ACE517DE26AE3BEE00027B64 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -597,6 +691,52 @@
 			};
 			name = Release;
 		};
+		ACE517E026AE3BEE00027B64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY7K35VQV5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.FastlaneSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TouchesVisualizer;
+			};
+			name = Debug;
+		};
+		ACE517E126AE3BEE00027B64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BY7K35VQV5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.podlewski.alexandre.FastlaneSnapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TouchesVisualizer;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -632,6 +772,15 @@
 			buildConfigurations = (
 				ACE517A726A4324600027B64 /* Debug */,
 				ACE517A826A4324600027B64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACE517E226AE3BEE00027B64 /* Build configuration list for PBXNativeTarget "FastlaneSnapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE517E026AE3BEE00027B64 /* Debug */,
+				ACE517E126AE3BEE00027B64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
